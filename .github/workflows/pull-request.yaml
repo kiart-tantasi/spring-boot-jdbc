@@ -28,6 +28,6 @@ jobs:
         uses: madrapps/jacoco-report@v1.3
         with:
           paths: build/reports/jacoco/test/jacocoTestReport.xml
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ACTION_TOKEN }}
       - name: Build
         run: ./gradlew clean build
