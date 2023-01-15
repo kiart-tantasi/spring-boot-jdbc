@@ -27,9 +27,10 @@ tasks.named('test') {
 jacoco {
 	toolVersion = "0.8.8"
 }
-String[] excludeds = [
+String[] excludedFromJacocoTest = [
 	"com/kt/jdbcmysql/JdbcMysqlApplication.*",
 	"com/kt/jdbcmysql/configuration/*",
+	"com/kt/jdbcmysql/demo/*",
 ]
 jacocoTestReport {
 	reports {
@@ -39,7 +40,7 @@ jacocoTestReport {
 	}
 	afterEvaluate {
 		classDirectories.setFrom(files(classDirectories.files.collect {
-			fileTree(dir: it, exclude: excludeds)
+			fileTree(dir: it, exclude: excludedFromJacocoTest)
 		}))
 	}
 }
@@ -53,7 +54,7 @@ jacocoTestCoverageVerification {
 	}
 	afterEvaluate {
 		classDirectories.setFrom(files(classDirectories.files.collect {
-			fileTree(dir: it, exclude: excludeds)
+			fileTree(dir: it, exclude: excludedFromJacocoTest)
 		}))
 	}
 }

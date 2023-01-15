@@ -52,9 +52,8 @@ public class JdbcTemplate {
         return this.getMultipleResultSets(statement, rowMappers);
     }
 
-    /*
-     * Private Ultility Methods
-     */
+    // private methods
+
     private List<List<Map<String, Object>>> getMultipleResultSets(
             final Statement statement,
             final List<List<String>> rowMappers)

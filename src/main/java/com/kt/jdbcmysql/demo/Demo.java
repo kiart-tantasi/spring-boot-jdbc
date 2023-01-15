@@ -76,6 +76,7 @@ public class Demo {
     };
 
     // private methods
+
     private void printPeople(final List<Map<String, Object>> singleResultSet) throws SQLException {
         for (final Map<String, Object> sqlRow : singleResultSet) {
             this.printPerson(sqlRow);
@@ -99,7 +100,6 @@ public class Demo {
 
             System.out.println("");
         }
-        ;
     }
 
     private void printMultipleCareersWithRowMappers(final List<List<Map<String, Object>>> multipleResultSets,
